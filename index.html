@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamiento Académico - Prácticas de Matemáticas y más</title>
+    <meta name="description" content="Una plataforma interactiva para practicar matemáticas, fracciones, geometría y conceptos. Diseñada para aprender jugando.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- KaTeX for LaTeX Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Ambient Background Gradients -->
+    <div class="ambient-glow bg-glow-1"></div>
+    <div class="ambient-glow bg-glow-2"></div>
+
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <header class="app-header">
+            <div class="logo-area" id="btn-logo-home">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Entrenamiento Académico</h1>
+                    <span>Matemáticas & Más</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-sun icon-light"></i>
+                    <i class="fa-solid fa-moon icon-dark"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- SECTION 1: DASHBOARD / CATEGORY SELECTION -->
+            <section id="sec-dashboard" class="app-section active">
+                <div class="welcome-banner">
+                    <h2>¿Qué quieres practicar hoy?</h2>
+                    <p>Elige una categoría y pon a prueba tus conocimientos con ejercicios interactivos personalizables.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <!-- Arithmetic -->
+                    <div class="category-card" data-category="aritmetica">
+                        <div class="card-icon c-arithmetic">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3>Aritmética</h3>
+                        <p>Suma, resta, multiplicación, división, enteros y decimales.</p>
+                        <div class="card-footer">
+                            <span>10 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Fractions -->
+                    <div class="category-card" data-category="fracciones">
+                        <div class="card-icon c-fractions">
+                            <i class="fa-solid fa-pie-chart"></i>
+                        </div>
+                        <h3>Fracciones</h3>
+                        <p>Identificar visualmente, comparar, simplificar y realizar operaciones.</p>
+                        <div class="card-footer">
+                            <span>4 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Geometry -->
+                    <div class="category-card" data-category="geometria">
+                        <div class="card-icon c-geometry">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+                        <h3>Geometría</h3>
+                        <p>Área, perímetro, ángulos y cálculo de figuras en 2D.</p>
+                        <div class="card-footer">
+                            <span>3 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Concepts -->
+                    <div class="category-card" data-category="conceptos">
+                        <div class="card-icon c-concepts">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3>Conceptos</h3>
+                        <p>Lectura del reloj analógico, números romanos y conversión de medidas.</p>
+                        <div class="card-footer">
+                            <span>3 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Álgebra & Conjuntos -->
+                    <div class="category-card" data-category="algebra_conjuntos">
+                        <div class="card-icon c-algebra">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <h3>Álgebra & Conjuntos</h3>
+                        <p>Operaciones de conjuntos, desigualdades, notación de intervalos y propiedades.</p>
+                        <div class="card-footer">
+                            <span>4 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Conversión de Unidades -->
+                    <div class="category-card" data-category="conversion_unidades">
+                        <div class="card-icon c-conversion">
+                            <i class="fa-solid fa-right-left"></i>
+                        </div>
+                        <h3>Conversión de Unidades</h3>
+                        <p>Practica conversiones en matemáticas, física, química e ingeniería de forma interactiva.</p>
+                        <div class="card-footer">
+                            <span>4 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Despeje de Variables -->
+                    <div class="category-card" data-category="despeje_variables">
+                        <div class="card-icon c-despeje">
+                            <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                        </div>
+                        <h3>Despeje de Variables</h3>
+                        <p>Aprende a despejar incógnitas de fórmulas en física, química, ingeniería y matemáticas.</p>
+                        <div class="card-footer">
+                            <span>4 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Ecuaciones -->
+                    <div class="category-card" data-category="ecuaciones">
+                        <div class="card-icon c-ecuaciones">
+                            <i class="fa-solid fa-equals"></i>
+                        </div>
+                        <h3>Ecuaciones</h3>
+                        <p>Resuelve ecuaciones lineales, cuadráticas, con radicales y con fracciones.</p>
+                        <div class="card-footer">
+                            <span>4 temas</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: SUBCATEGORIES & CONFIGURATION -->
+            <section id="sec-config" class="app-section">
+                <button class="btn-back" id="btn-config-back">
+                    <i class="fa-solid fa-chevron-left"></i> Volver a categorías
+                </button>
+
+                <div class="config-layout">
+                    <!-- Topic Selection (Left) -->
+                    <div class="config-topics-panel glass-panel">
+                        <h2 id="config-category-title">Aritmética</h2>
+                        <p class="panel-subtitle">Selecciona el tema de estudio:</p>
+                        
+                        <div class="topics-list" id="topics-container">
+                            <!-- Dynamic Content Loaded by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Options & Quiz Settings (Right) -->
+                    <div class="config-settings-panel glass-panel">
+                        <h2>Personaliza tu examen</h2>
+                        
+                        <div class="settings-form">
+                            <!-- Length / Questions -->
+                            <div class="setting-group">
+                                <label for="setting-length">Largo (Preguntas)</label>
+                                <div class="segmented-control" id="ctrl-length">
+                                    <button class="segment-btn" data-val="10">10</button>
+                                    <button class="segment-btn active" data-val="20">20</button>
+                                    <button class="segment-btn" data-val="30">30</button>
+                                    <button class="segment-btn" data-val="50">50</button>
+                                </div>
+                            </div>
+
+                            <!-- Level / Difficulty -->
+                            <div class="setting-group">
+                                <div class="setting-label-row">
+                                    <label for="setting-level">Nivel de Dificultad</label>
+                                    <span id="level-display" class="badge">Nivel 1</span>
+                                </div>
+                                <div class="range-slider-container">
+                                    <input type="range" id="setting-level" min="1" max="10" value="1" class="slider">
+                                    <div class="slider-ticks">
+                                        <span>Fácil</span>
+                                        <span>Medio</span>
+                                        <span>Difícil</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Duration -->
+                            <div class="setting-group">
+                                <label for="setting-time">Duración</label>
+                                <div class="segmented-control" id="ctrl-time">
+                                    <button class="segment-btn active" data-val="0">Sin límite</button>
+                                    <button class="segment-btn" data-val="60">1 min</button>
+                                    <button class="segment-btn" data-val="120">2 min</button>
+                                    <button class="segment-btn" data-val="300">5 min</button>
+                                </div>
+                            </div>
+
+                            <!-- Mode (Practice vs Test) -->
+                            <div class="setting-group">
+                                <label>Modo de juego</label>
+                                <div class="segmented-control" id="ctrl-mode">
+                                    <button class="segment-btn active" data-val="practice">
+                                        <i class="fa-solid fa-graduation-cap"></i> Práctica (Feedback inmediato)
+                                    </button>
+                                    <button class="segment-btn" data-val="exam">
+                                        <i class="fa-solid fa-award"></i> Examen (Feedback al final)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Contextual Extra Options (e.g. Negatives, fractions simplified etc) -->
+                            <div class="setting-group" id="extra-options-container">
+                                <label>Opciones adicionales</label>
+                                <div class="checkbox-options" id="extra-checkboxes">
+                                    <!-- Populated dynamically based on category -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="btn-start-quiz" class="btn-primary btn-block">
+                            Comenzar Prueba <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: ACTIVE QUIZ PLAYGROUND -->
+            <section id="sec-quiz" class="app-section">
+                <!-- Quiz Header Progress -->
+                <div class="quiz-header glass-panel">
+                    <div class="qh-stats">
+                        <div class="stat-pill">
+                            <span class="lbl">Progreso</span>
+                            <span class="val" id="quiz-progress-text">1 / 10</span>
+                        </div>
+                        <div class="stat-pill text-success">
+                            <span class="lbl"><i class="fa-solid fa-check"></i> Aciertos</span>
+                            <span class="val" id="quiz-correct-count">0</span>
+                        </div>
+                        <div class="stat-pill text-danger">
+                            <span class="lbl"><i class="fa-solid fa-xmark"></i> Fallos</span>
+                            <span class="val" id="quiz-wrong-count">0</span>
+                        </div>
+                        <div class="stat-pill" id="timer-container">
+                            <span class="lbl"><i class="fa-regular fa-clock"></i> Tiempo</span>
+                            <span class="val" id="quiz-timer">00:00</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" id="quiz-progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz Card & Interaction -->
+                <div class="quiz-body-layout">
+                    <!-- Main Quiz Area -->
+                    <div class="quiz-card glass-panel" id="quiz-card-content">
+                        <!-- Canvas Container (hidden if not visual quiz) -->
+                        <div class="quiz-visual-container" id="visual-container">
+                            <canvas id="quiz-canvas" width="400" height="300"></canvas>
+                        </div>
+
+                        <!-- Question Prompt -->
+                        <div class="quiz-question" id="quiz-question-text">
+                            ¿Cuánto es 5 + 3?
+                        </div>
+
+                        <!-- Answer Input & Keypad / Choices -->
+                        <div class="quiz-answers" id="quiz-answers-area">
+                            <!-- Dynamic Content: Input + keypad OR Multiple-choice buttons -->
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="quiz-actions">
+                            <button id="btn-skip" class="btn-secondary">Saltar Pregunta</button>
+                            <button id="btn-submit" class="btn-primary">Responder <i class="fa-solid fa-circle-check"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Help / Escape Route -->
+                <div class="quiz-footer-actions">
+                    <button class="btn-text-danger" id="btn-quit-quiz">
+                        <i class="fa-solid fa-right-from-bracket"></i> Abandonar examen
+                    </button>
+                </div>
+            </section>
+
+            <!-- SECTION 4: RESULTS PAGE -->
+            <section id="sec-results" class="app-section">
+                <div class="results-layout">
+                    <!-- Results Card Header (Score details) -->
+                    <div class="results-summary-card glass-panel">
+                        <div class="results-badge" id="results-score-circle">
+                            <span class="score-percent" id="res-percent">90%</span>
+                            <span class="score-label" id="res-grade">¡Excelente!</span>
+                        </div>
+                        
+                        <div class="results-stats-grid">
+                            <div class="res-stat-box">
+                                <span class="lbl">Aciertos</span>
+                                <span class="val text-success" id="res-correct">9</span>
+                            </div>
+                            <div class="res-stat-box">
+                                <span class="lbl">Fallos</span>
+                                <span class="val text-danger" id="res-wrong">1</span>
+                            </div>
+                            <div class="res-stat-box">
+                                <span class="lbl">Saltadas</span>
+                                <span class="val text-warning" id="res-skipped">0</span>
+                            </div>
+                            <div class="res-stat-box">
+                                <span class="lbl">Tiempo Total</span>
+                                <span class="val" id="res-time">00:45</span>
+                            </div>
+                            <div class="res-stat-box">
+                                <span class="lbl">Tiempo / Preg</span>
+                                <span class="val" id="res-time-avg">4.5s</span>
+                            </div>
+                            <div class="res-stat-box">
+                                <span class="lbl">Tema</span>
+                                <span class="val" id="res-topic-name">Suma</span>
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button id="btn-restart-quiz" class="btn-primary">
+                                <i class="fa-solid fa-arrow-rotate-right"></i> Repetir Examen
+                            </button>
+                            <button id="btn-home" class="btn-secondary">
+                                <i class="fa-solid fa-house"></i> Volver al Inicio
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown of Questions (Detailed Review) -->
+                    <div class="results-review-panel glass-panel">
+                        <h2>Revisión de respuestas</h2>
+                        <p class="panel-subtitle">Analiza tus fallos para seguir aprendiendo:</p>
+
+                        <div class="review-list" id="results-review-list">
+                            <!-- Filled dynamically by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Entrenamiento Académico. Inspirado en ThatQuiz. Creado con fines educativos.</p>
+        </footer>
+    </div>
+
+    <!-- Modals (e.g. Exit confirmation) -->
+    <div id="modal-quit" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <h2>¿Abandonar Examen?</h2>
+            <p>Se perderá todo tu progreso actual y no se guardará la puntuación.</p>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="btn-quit-cancel">Continuar examen</button>
+                <button class="btn-danger" id="btn-quit-confirm">Sí, abandonar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
