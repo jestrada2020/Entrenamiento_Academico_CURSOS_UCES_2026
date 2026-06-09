@@ -147,6 +147,11 @@ const TOPIC_METADATA = {
         { id: 'fact_poshenloh', label: 'Método Po-Shen Loh (a = 1)', icon: 'fa-graduation-cap' },
         { id: 'fact_diferencia_tcp', label: 'Dif. Cuadrados y TCP', icon: 'fa-square-minus' },
         { id: 'fact_a_diferente_uno', label: 'Trinomios con a != 1', icon: 'fa-arrow-up-right-dots' }
+    ],
+    problemas_porcentajes: [
+        { id: 'porcentaje_simple', label: 'Porcentaje Simple', icon: 'fa-calculator' },
+        { id: 'porcentaje_variacion', label: 'Incrementos y Descuentos', icon: 'fa-tags' },
+        { id: 'porcentaje_aplicado', label: 'Problemas de Aplicación', icon: 'fa-users' }
     ]
 };
 
@@ -334,7 +339,8 @@ function enterConfigScreen() {
         optimizacion_segunda_derivada: 'Optimización (2ª Derivada)',
         optimizacion_cuadratica: 'Optimización Cuadrática',
         identidades_trigonometricas: 'Identidades Trigonométricas',
-        factorizacion_cuadratica: 'Factorización Cuadrática'
+        factorizacion_cuadratica: 'Factorización Cuadrática',
+        problemas_porcentajes: 'Problemas de Porcentajes'
     };
     DOM.configCategoryTitle.innerText = categoryTitles[state.currentCategory] || 'Práctica';
 
@@ -624,6 +630,8 @@ function createSingleQuestion(category, topic, level, options, index, total) {
             return generateIdentidadesTrigonometricasQuestion(topic, level, options, index, total);
         case 'factorizacion_cuadratica':
             return generateFactorizacionCuadraticaQuestion(topic, level, options, index, total);
+        case 'problemas_porcentajes':
+            return generateProblemasPorcentajesQuestion(topic, level, options, index, total);
         default:
             return {
                 text: 'Error en la pregunta',
@@ -6110,6 +6118,104 @@ function generateFactorizacionCuadraticaQuestion(topic, level, options, index, t
         topicLabel: 'Factorización Cuadrática',
         criterion: topic === 'fact_poshenloh' ? critPoShenLoh : critGral,
         criterionHeader: topic === 'fact_poshenloh' ? "Método de Po-Shen Loh" : "Guía de Factorización"
+    };
+}
+
+// ==========================================================================
+// PROBLEMAS DE PORCENTAJES GENERATOR
+// ==========================================================================
+function generateProblemasPorcentajesQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_perc_' + level;
+    
+    if (topic === 'porcentaje_simple') {
+        const P = getShuffledIndexForTopic(shuffleKey + '_p', 6, index) * 5 + 10; 
+        const N = getShuffledIndexForTopic(shuffleKey + '_n', 5, index) * 40 + 80; 
+        
+        text = `Calcula el $${P}\\%$ de $${N}$.`;
+        const sol = (P * N) / 100;
+        correctAnswer = `$${sol}$`;
+        
+        choices = [
+            correctAnswer,
+            `$${sol + 4}$`,
+            `$${Math.max(2, sol - 4)}$`,
+            `$${(P * N / 10)}$`
+        ];
+    } else if (topic === 'porcentaje_variacion') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        const P = getShuffledIndexForTopic(shuffleKey + '_p', 4, index) * 5 + 10; 
+        const N = getShuffledIndexForTopic(shuffleKey + '_n', 5, index) * 20 + 60; 
+        
+        if (subType === 0) {
+            text = `Un par de zapatos que cuesta $${N}\\text{ USD}$ tiene un descuento promocional del $${P}\\%$. ¿Cuál es el precio final que se paga por los zapatos?`;
+            const sol = N * (1 - P / 100);
+            correctAnswer = `$${sol}\\text{ USD}$`;
+            
+            choices = [
+                correctAnswer,
+                `$${N - P}\\text{ USD}$`,
+                `$${sol + 10}\\text{ USD}$`,
+                `$${N * (P / 100)}\\text{ USD}$`
+            ];
+        } else {
+            text = `El precio neto de un televisor es de $${N}\\text{ USD}$. Si se le aplica un impuesto local (incremento) del $${P}\\%$, ¿cuál es el precio final de venta al público?`;
+            const sol = N * (1 + P / 100);
+            correctAnswer = `$${sol}\\text{ USD}$`;
+            
+            choices = [
+                correctAnswer,
+                `$${N + P}\\text{ USD}$`,
+                `$${sol - 15}\\text{ USD}$`,
+                `$${N * (1 + P / 100) + 10}\\text{ USD}$`
+            ];
+        }
+    } else { 
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const totalStudents = getShuffledIndexForTopic(shuffleKey + '_tot', 3, index) * 10 + 30; 
+            const P = 40; 
+            
+            text = `En un salón de clases hay un grupo de $${totalStudents}$ estudiantes en total. Si el $40\\%$ de los estudiantes son mujeres, ¿cuántos hombres hay en el salón?`;
+            const sol = totalStudents * 0.6;
+            correctAnswer = `$${sol}\\text{ hombres}$`;
+            
+            choices = [
+                correctAnswer,
+                `$${totalStudents * 0.4}\\text{ hombres}$`,
+                `$${sol + 5}\\text{ hombres}$`,
+                `$${totalStudents - 10}\\text{ hombres}$`
+            ];
+        } else {
+            const originalPrice = getShuffledIndexForTopic(shuffleKey + '_orig', 4, index) * 10 + 30; 
+            const P = 20; 
+            const finalPrice = originalPrice * 0.8;
+            
+            text = `Una tienda vende un abrigo con el $20\\%$ de descuento y pagas exactamente $${finalPrice}\\text{ USD}$. ¿Cuál era el precio original del abrigo antes del descuento?`;
+            correctAnswer = `$${originalPrice}\\text{ USD}$`;
+            
+            choices = [
+                correctAnswer,
+                `$${originalPrice + 10}\\text{ USD}$`,
+                `$${finalPrice + 5}\\text{ USD}$`,
+                `$${originalPrice * 1.2}\\text{ USD}$`
+            ];
+        }
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$50$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Porcentajes'
     };
 }
 

@@ -42,6 +42,7 @@
     --c-opt-cuadratica: #0ea5e9;
     --c-trig-identidades: #d946ef;
     --c-factorizacion: #e11d48;
+    --c-porcentajes: #22c55e;
 
     /* Common Sizing */
     --radius-sm: 8px;
@@ -472,6 +473,7 @@ h2 {
 .category-card[data-category="optimizacion_cuadratica"]::before { background: var(--c-opt-cuadratica); }
 .category-card[data-category="identidades_trigonometricas"]::before { background: var(--c-trig-identidades); }
 .category-card[data-category="factorizacion_cuadratica"]::before { background: var(--c-factorizacion); }
+.category-card[data-category="problemas_porcentajes"]::before { background: var(--c-porcentajes); }
 
 .card-icon {
     width: 56px;
@@ -504,6 +506,7 @@ h2 {
 .c-opt-cuadratica { background: linear-gradient(135deg, var(--c-opt-cuadratica), #38bdf8); }
 .c-trig-identidades { background: linear-gradient(135deg, var(--c-trig-identidades), #f472b6); }
 .c-factorizacion { background: linear-gradient(135deg, var(--c-factorizacion), #fb7185); }
+.c-porcentajes { background: linear-gradient(135deg, var(--c-porcentajes), #4ade80); }
 
 .category-card h3 {
     font-size: 20px;
