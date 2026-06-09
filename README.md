@@ -1,0 +1,2 @@
+# Entrenamiento_Academico_CURSOS_UCES_2026
+Aplicación para entrenarse en conceptos básicos
