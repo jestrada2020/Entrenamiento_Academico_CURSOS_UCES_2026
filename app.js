@@ -89,6 +89,64 @@ const TOPIC_METADATA = {
         { id: 'cuadraticas', label: 'Ecuaciones Cuadráticas', icon: 'fa-arrow-up-right-dots' },
         { id: 'radicales', label: 'Ecuaciones con Radicales', icon: 'fa-square-root-variable' },
         { id: 'fraccionarias', label: 'Ecuaciones con Fracciones', icon: 'fa-divide' }
+    ],
+    calculo_derivadas: [
+        { id: 'derivadas_basicas', label: 'Derivadas Algebraicas Básicas', icon: 'fa-arrow-down-short-wide' },
+        { id: 'derivadas_producto_cociente', label: 'Reglas del Producto y Cociente', icon: 'fa-divide' },
+        { id: 'derivadas_trig_exp', label: 'Trigonométricas, Exponenciales y Log.', icon: 'fa-wave-square' },
+        { id: 'derivadas_cadena', label: 'Regla de la Cadena', icon: 'fa-link' }
+    ],
+    integrales_indefinidas: [
+        { id: 'integrales_basicas', label: 'Integrales Inmediatas Algebraicas', icon: 'fa-arrow-up-wide-short' },
+        { id: 'integrales_directas_trig_exp', label: 'Directas Trigonométricas y Exp.', icon: 'fa-wave-square' },
+        { id: 'integrales_sustitucion', label: 'Integración por Sustitución', icon: 'fa-repeat' },
+        { id: 'integrales_partes', label: 'Integración por Partes', icon: 'fa-scissors' }
+    ],
+    derivadas_parciales: [
+        { id: 'parciales_dos_primer', label: 'Parciales 1er Orden (2 var)', icon: 'fa-x' },
+        { id: 'parciales_dos_segundo', label: 'Parciales 2do Orden (2 var)', icon: 'fa-y' },
+        { id: 'parciales_tres_primer', label: 'Parciales 1er Orden (3 var)', icon: 'fa-z' },
+        { id: 'parciales_gradiente', label: 'Gradiente (2 y 3 var)', icon: 'fa-location-arrow' }
+    ],
+    integrales_fracciones_parciales: [
+        { id: 'fracciones_parciales_simples', label: 'Factores Lineales Distintos', icon: 'fa-table-columns' },
+        { id: 'fracciones_parciales_repetidos', label: 'Factores Lineales Repetidos', icon: 'fa-repeat' },
+        { id: 'fracciones_parciales_cuadraticos', label: 'Factores Cuadráticos', icon: 'fa-border-all' }
+    ],
+    integrales_sustitucion_trigonometrica: [
+        { id: 'sust_trig_seno', label: 'Caso Seno (a^2 - x^2)', icon: 'fa-wave-square' },
+        { id: 'sust_trig_tangente', label: 'Caso Tangente (a^2 + x^2)', icon: 'fa-arrow-up-right-dots' },
+        { id: 'sust_trig_secante', label: 'Caso Secante (x^2 - a^2)', icon: 'fa-bezier-curve' }
+    ],
+    recta_tangente: [
+        { id: 'recta_tangente_algebraica', label: 'Funciones Algebraicas', icon: 'fa-arrow-trend-up' },
+        { id: 'recta_tangente_trig_exp', label: 'Trascendentes (Trig/Exp)', icon: 'fa-wave-square' },
+        { id: 'recta_tangente_completo', label: 'Punto Completo (x, y)', icon: 'fa-location-crosshairs' }
+    ],
+    optimizacion_primera_derivada: [
+        { id: 'opt_1d_numeros', label: 'Problemas Numéricos', icon: 'fa-calculator' },
+        { id: 'opt_1d_areas', label: 'Optimización de Áreas', icon: 'fa-vector-square' },
+        { id: 'opt_1d_volumenes', label: 'Optimización de Volúmenes', icon: 'fa-cube' }
+    ],
+    optimizacion_segunda_derivada: [
+        { id: 'opt_2d_costos', label: 'Costos y Recursos', icon: 'fa-dollar-sign' },
+        { id: 'opt_2d_geometria', label: 'Geometría General', icon: 'fa-shapes' },
+        { id: 'opt_2d_distancias', label: 'Optimizar Distancias', icon: 'fa-ruler' }
+    ],
+    optimizacion_cuadratica: [
+        { id: 'opt_cuad_maximos', label: 'Modelos con Máximo', icon: 'fa-arrow-up-long' },
+        { id: 'opt_cuad_minimos', label: 'Modelos con Mínimo', icon: 'fa-arrow-down-long' },
+        { id: 'opt_cuad_general', label: 'Decisión Máximo/Mínimo', icon: 'fa-circle-question' }
+    ],
+    identidades_trigonometricas: [
+        { id: 'ident_pitagoricas', label: 'Identidades Pitagóricas', icon: 'fa-shapes' },
+        { id: 'ident_cocientes_reciprocidades', label: 'Cocientes y Recíprocas', icon: 'fa-divide' },
+        { id: 'ident_suma_doble', label: 'Ángulo Doble y Adición', icon: 'fa-wave-square' }
+    ],
+    factorizacion_cuadratica: [
+        { id: 'fact_poshenloh', label: 'Método Po-Shen Loh (a = 1)', icon: 'fa-graduation-cap' },
+        { id: 'fact_diferencia_tcp', label: 'Dif. Cuadrados y TCP', icon: 'fa-square-minus' },
+        { id: 'fact_a_diferente_uno', label: 'Trinomios con a != 1', icon: 'fa-arrow-up-right-dots' }
     ]
 };
 
@@ -265,7 +323,18 @@ function enterConfigScreen() {
         algebra_conjuntos: 'Álgebra & Conjuntos',
         conversion_unidades: 'Conversión de Unidades',
         despeje_variables: 'Despeje de Variables',
-        ecuaciones: 'Ecuaciones'
+        ecuaciones: 'Ecuaciones',
+        calculo_derivadas: 'Cálculo de Derivadas',
+        integrales_indefinidas: 'Integrales Indefinidas',
+        derivadas_parciales: 'Derivadas Parciales',
+        integrales_fracciones_parciales: 'Integrales por Fracciones Parciales',
+        integrales_sustitucion_trigonometrica: 'Sustitución Trigonométrica',
+        recta_tangente: 'Recta Tangente',
+        optimizacion_primera_derivada: 'Optimización (1ª Derivada)',
+        optimizacion_segunda_derivada: 'Optimización (2ª Derivada)',
+        optimizacion_cuadratica: 'Optimización Cuadrática',
+        identidades_trigonometricas: 'Identidades Trigonométricas',
+        factorizacion_cuadratica: 'Factorización Cuadrática'
     };
     DOM.configCategoryTitle.innerText = categoryTitles[state.currentCategory] || 'Práctica';
 
@@ -533,6 +602,28 @@ function createSingleQuestion(category, topic, level, options, index, total) {
             return generateDespejeVariablesQuestion(topic, level, options, index, total);
         case 'ecuaciones':
             return generateEcuacionesQuestion(topic, level, options, index, total);
+        case 'calculo_derivadas':
+            return generateCalculoDerivadasQuestion(topic, level, options, index, total);
+        case 'integrales_indefinidas':
+            return generateIntegralesIndefinidasQuestion(topic, level, options, index, total);
+        case 'derivadas_parciales':
+            return generateDerivadasParcialesQuestion(topic, level, options, index, total);
+        case 'integrales_fracciones_parciales':
+            return generateIntegralesFraccionesParcialesQuestion(topic, level, options, index, total);
+        case 'integrales_sustitucion_trigonometrica':
+            return generateIntegralesSustitucionTrigonometricaQuestion(topic, level, options, index, total);
+        case 'recta_tangente':
+            return generateRectaTangenteQuestion(topic, level, options, index, total);
+        case 'optimizacion_primera_derivada':
+            return generateOptimizacionPrimeraDerivadaQuestion(topic, level, options, index, total);
+        case 'optimizacion_segunda_derivada':
+            return generateOptimizacionSegundaDerivadaQuestion(topic, level, options, index, total);
+        case 'optimizacion_cuadratica':
+            return generateOptimizacionCuadraticaQuestion(topic, level, options, index, total);
+        case 'identidades_trigonometricas':
+            return generateIdentidadesTrigonometricasQuestion(topic, level, options, index, total);
+        case 'factorizacion_cuadratica':
+            return generateFactorizacionCuadraticaQuestion(topic, level, options, index, total);
         default:
             return {
                 text: 'Error en la pregunta',
@@ -1072,7 +1163,19 @@ function renderQuestion(index) {
 
     // Reset view
     DOM.visualContainer.style.display = 'none';
-    DOM.quizQuestionText.innerHTML = q.text.replace(/\n/g, '<br>');
+    if (q.criterion) {
+        const header = q.criterionHeader || "Criterio aplicado:";
+        DOM.quizQuestionText.innerHTML = `
+            <div class="question-container-split">
+                <div class="question-main-text">${q.text.replace(/\n/g, '<br>')}</div>
+                <div class="question-criterion-box">
+                    <strong>${header}</strong><br>${q.criterion.replace(/\n/g, '<br>')}
+                </div>
+            </div>
+        `;
+    } else {
+        DOM.quizQuestionText.innerHTML = q.text.replace(/\n/g, '<br>');
+    }
     DOM.quizAnswersArea.innerHTML = '';
 
     // Draw function visualizer
@@ -4523,3 +4626,1490 @@ function formatLinearTerm(a, b, varName = 'x') {
     else if (b < 0) term += ' - ' + Math.abs(b);
     return term;
 }
+
+// ==========================================================================
+// CÁLCULO DE DERIVADAS GENERATOR
+// ==========================================================================
+function generateCalculoDerivadasQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_deriv_' + level;
+    
+    if (topic === 'derivadas_basicas') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        if (subType === 0) {
+            // Polynomial: f(x) = a*x^n + b*x^m + c
+            const a = randRange(2, 6);
+            const n = randRange(3, 5);
+            const b = randRange(2, 6) * (Math.random() < 0.5 ? 1 : -1);
+            const m = randRange(1, 2);
+            const c = randRange(-8, 8);
+            
+            const fnText = `${a}x^{${n}} ${b > 0 ? '+ ' + b : '- ' + Math.abs(b)}x${m === 2 ? '^2' : ''} ${c > 0 ? '+ ' + c : c < 0 ? '- ' + Math.abs(c) : ''}`;
+            text = `Calcula la derivada de la siguiente función respecto a $x$:\n$$ f(x) = ${fnText} $$`;
+            
+            const term1Val = a * n;
+            const term1Exp = n - 1;
+            const term2Val = b * m;
+            const term2Exp = m - 1;
+            
+            const derivTerm1 = `${term1Val}x${term1Exp > 1 ? '^{' + term1Exp + '}' : ''}`;
+            const derivTerm2 = term2Val > 0 ? `+ ${term2Val}${term2Exp > 0 ? 'x' : ''}` : `- ${Math.abs(term2Val)}${term2Exp > 0 ? 'x' : ''}`;
+            correctAnswer = `$f'(x) = ${derivTerm1} ${derivTerm2}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${a}x^{${term1Exp}} ${derivTerm2}$`,
+                `$f'(x) = ${term1Val}x^{${n}} ${derivTerm2}$`,
+                `$f'(x) = ${term1Val}x^{${term1Exp}} ${term2Val > 0 ? '-' : '+'} ${Math.abs(term2Val)}${term2Exp > 0 ? 'x' : ''}$`
+            ];
+        } else if (subType === 1) {
+            // Negative exponent: f(x) = a/x^n + b
+            const a = randRange(2, 6);
+            const n = randRange(1, 3);
+            const b = randRange(-6, 6);
+            
+            const fnText = `\\frac{${a}}{x^{${n}}} ${b > 0 ? '+ ' + b : b < 0 ? '- ' + Math.abs(b) : ''}`;
+            text = `Calcula la derivada de la función:\n$$ f(x) = ${fnText} $$`;
+            
+            const termExp = n + 1;
+            correctAnswer = `$f'(x) = -\\frac{${a * n}}{x^{${termExp}}}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = \\frac{${a * n}}{x^{${termExp}}}$`,
+                `$f'(x) = -\\frac{${a}}{x^{${n - 1}}}$`,
+                `$f'(x) = -\\frac{${a * n}}{x^{${n}}}$`
+            ];
+        } else {
+            // Square root: f(x) = a*\sqrt{x} + x^n
+            const a = randRange(2, 6);
+            const n = randRange(2, 3);
+            
+            const fnText = `${a}\\sqrt{x} + x^{${n}}`;
+            text = `Calcula la derivada de la función:\n$$ f(x) = ${fnText} $$`;
+            
+            const aIsEven = (a % 2 === 0);
+            const leadTerm = aIsEven ? `\\frac{${a/2}}{\\sqrt{x}}` : `\\frac{${a}}{2\\sqrt{x}}`;
+            correctAnswer = `$f'(x) = ${leadTerm} + ${n}x^{${n-1}}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${leadTerm} + x^{${n-1}}$`,
+                `$f'(x) = \\frac{${a}}{\\sqrt{x}} + ${n}x^{${n-1}}$`,
+                `$f'(x) = ${leadTerm} + ${n}x^{${n}}$`
+            ];
+        }
+    } else if (topic === 'derivadas_producto_cociente') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            // Product: f(x) = (ax + b)(cx^2)
+            const a = randRange(2, 4);
+            const b = randRange(1, 4);
+            const c = randRange(2, 4);
+            text = `Usa la regla del producto para derivar:\n$$ f(x) = (${a}x + ${b})(${c}x^2) $$`;
+            
+            const correctVal1 = 3 * a * c;
+            const correctVal2 = 2 * b * c;
+            correctAnswer = `$f'(x) = ${correctVal1}x^2 + ${correctVal2}x$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${a * c}x^2 + ${correctVal2}x$`,
+                `$f'(x) = ${a} \\cdot (${c}x^2) + (${a}x + ${b}) \\cdot (${c}x)$`,
+                `$f'(x) = ${correctVal1}x^3 + ${correctVal2}x^2$`
+            ];
+        } else {
+            // Quotient: f(x) = (ax + b) / (cx - d)
+            const a = randRange(2, 5);
+            const b = randRange(1, 5);
+            const c = randRange(2, 3);
+            const d = randRange(2, 5);
+            
+            text = `Usa la regla del cociente para derivar:\n$$ f(x) = \\frac{${a}x + ${b}}{${c}x - ${d}} $$`;
+            
+            const num = - (a * d + b * c);
+            correctAnswer = `$f'(x) = \\frac{${num}}{(${c}x - ${d})^2}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = \\frac{${a * d + b * c}}{(${c}x - ${d})^2}$`,
+                `$f'(x) = \\frac{${num}}{${c}x - ${d}}$`,
+                `$f'(x) = \\frac{${a * c}}{(${c}x - ${d})^2}$`
+            ];
+        }
+    } else if (topic === 'derivadas_trig_exp') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        if (subType === 0) {
+            // f(x) = a*sin(x) - b*cos(x)
+            const a = randRange(2, 6);
+            const b = randRange(2, 6);
+            
+            text = `Calcula la derivada de:\n$$ f(x) = ${a}\\sin(x) - ${b}\\cos(x) $$`;
+            correctAnswer = `$f'(x) = ${a}\\cos(x) + ${b}\\sin(x)$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${a}\\cos(x) - ${b}\\sin(x)$`,
+                `$f'(x) = -${a}\\cos(x) + ${b}\\sin(x)$`,
+                `$f'(x) = ${a}\\sin(x) + ${b}\\cos(x)$`
+            ];
+        } else if (subType === 1) {
+            // f(x) = a*e^x + b*ln(x)
+            const a = randRange(2, 5);
+            const b = randRange(2, 6);
+            
+            text = `Calcula la derivada de:\n$$ f(x) = ${a}e^x + ${b}\\ln(x) $$`;
+            correctAnswer = `$f'(x) = ${a}e^x + \\frac{${b}}{x}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${a}e^x - \\frac{${b}}{x}$`,
+                `$f'(x) = e^x + \\frac{${b}}{x^2}$`,
+                `$f'(x) = ${a}e^{x-1} + \\frac{1}{x}$`
+            ];
+        } else {
+            // f(x) = a*tan(x)
+            const a = randRange(2, 5);
+            
+            text = `Calcula la derivada de:\n$$ f(x) = ${a}\\tan(x) $$`;
+            correctAnswer = `$f'(x) = ${a}\\sec^2(x)$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${a}\\csc^2(x)$`,
+                `$f'(x) = -${a}\\sec^2(x)$`,
+                `$f'(x) = ${a}\\tan^2(x)$`
+            ];
+        }
+    } else { // derivadas_cadena
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        if (subType === 0) {
+            // f(x) = (ax + b)^n
+            const a = randRange(2, 5);
+            const b = randRange(-5, 5);
+            const n = randRange(3, 5);
+            
+            const bStr = b > 0 ? `+ ${b}` : b < 0 ? `- ${Math.abs(b)}` : '';
+            text = `Usa la regla de la cadena para derivar:\n$$ f(x) = (${a}x ${bStr})^{${n}} $$`;
+            
+            const coeff = a * n;
+            correctAnswer = `$f'(x) = ${coeff}(${a}x ${bStr})^{${n-1}}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = ${n}(${a}x ${bStr})^{${n-1}}$`,
+                `$f'(x) = ${coeff}(${a}x ${bStr})^{${n}}$`,
+                `$f'(x) = ${a}(${a}x ${bStr})^{${n-1}}$`
+            ];
+        } else if (subType === 1) {
+            // f(x) = sin(a*x^2)
+            const a = randRange(2, 6);
+            
+            text = `Deriva aplicando la regla de la cadena:\n$$ f(x) = \\sin(${a}x^2) $$`;
+            correctAnswer = `$f'(x) = ${2 * a}x \\cos(${a}x^2)$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = \\cos(${a}x^2)$`,
+                `$f'(x) = ${a}x \\cos(${a}x^2)$`,
+                `$f'(x) = -${2 * a}x \\cos(${a}x^2)$`
+            ];
+        } else {
+            // f(x) = e^{a*x^2 + b*x}
+            const a = randRange(2, 4);
+            const b = randRange(1, 4);
+            
+            text = `Deriva aplicando la regla de la cadena:\n$$ f(x) = e^{${a}x^2 + ${b}x} $$`;
+            correctAnswer = `$f'(x) = (${2 * a}x + ${b}) e^{${a}x^2 + ${b}x}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f'(x) = (${a}x + ${b}) e^{${a}x^2 + ${b}x}$`,
+                `$f'(x) = e^{${2 * a}x + ${b}}$`,
+                `$f'(x) = (${2 * a}x) e^{${a}x^2 + ${b}x}$`
+            ];
+        }
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$f'(x) = ${randRange(2, 9)}x$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Cálculo de Derivadas'
+    };
+}
+
+// ==========================================================================
+// INTEGRALES INDEFINIDAS GENERATOR
+// ==========================================================================
+function generateIntegralesIndefinidasQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_integ_' + level;
+    
+    if (topic === 'integrales_basicas') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        if (subType === 0) {
+            // Polynomial: \int (a*x^n + b*x + c) dx
+            const a = randRange(2, 6);
+            const n = randRange(2, 4);
+            const coeffA = a * (n + 1); 
+            const b = randRange(2, 6) * (Math.random() < 0.5 ? 1 : -1);
+            const coeffB = b * 2; 
+            const c = randRange(-8, 8);
+            
+            const fnText = `${coeffA}x^{${n}} ${coeffB > 0 ? '+ ' + coeffB : '- ' + Math.abs(coeffB)}x ${c > 0 ? '+ ' + c : c < 0 ? '- ' + Math.abs(c) : ''}`;
+            text = `Resuelve la siguiente integral indefinida:\n$$ \\int (${fnText}) \\, dx $$`;
+            
+            const term1 = `${a}x^{${n+1}}`;
+            const term2 = b > 0 ? `+ ${b}x^2` : `- ${Math.abs(b)}x^2`;
+            const term3 = c > 0 ? `+ ${c}x` : c < 0 ? `- ${Math.abs(c)}x` : '';
+            
+            correctAnswer = `$${term1} ${term2} ${term3} + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${coeffA}x^{${n+1}} ${term2} ${term3} + C$`,
+                `$${a}x^{${n}} ${b > 0 ? '+ ' + b : '- ' + Math.abs(b)}x ${c > 0 ? '+ ' + c : c < 0 ? '- ' + Math.abs(c) : ''} + C$`,
+                `$${a}x^{${n+1}} ${b > 0 ? '-' : '+'} ${Math.abs(b)}x^2 ${c > 0 ? '-' : '+'} ${Math.abs(c)}x + C$`
+            ];
+        } else if (subType === 1) {
+            // Constant over power: \int a / x^n dx
+            const n = randRange(2, 4);
+            const k = randRange(2, 5);
+            const a = k * (n - 1); 
+            
+            text = `Resuelve la integral indefinida:\n$$ \\int \\frac{${a}}{x^{${n}}} \\, dx $$`;
+            
+            const exponent = n - 1;
+            correctAnswer = `$-\\frac{${k}}{x^{${exponent}}} + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\frac{${k}}{x^{${exponent}}} + C$`,
+                `$-\\frac{${a}}{x^{${n+1}}} + C$`,
+                `$-\\frac{${a * (n - 1)}}{x^{${exponent}}} + C$`
+            ];
+        } else {
+            // Square root: \int a*\sqrt{x} dx
+            const k = randRange(1, 4);
+            const a = 3 * k;
+            
+            text = `Resuelve la integral indefinida:\n$$ \\int ${a}\\sqrt{x} \\, dx $$`;
+            
+            correctAnswer = `$${2 * k}x\\sqrt{x} + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${a}x\\sqrt{x} + C$`,
+                `$\\frac{${k}}{2\\sqrt{x}} + C$`,
+                `$${2 * k}\\sqrt{x} + C$`
+            ];
+        }
+    } else if (topic === 'integrales_directas_trig_exp') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        if (subType === 0) {
+            // \int a*sin(x) + b*cos(x) dx
+            const a = randRange(2, 5);
+            const b = randRange(2, 5);
+            
+            text = `Calcula la antiderivada de:\n$$ f(x) = ${a}\\sin(x) + ${b}\\cos(x) $$`;
+            correctAnswer = `$-${a}\\cos(x) + ${b}\\sin(x) + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${a}\\cos(x) - ${b}\\sin(x) + C$`,
+                `$${a}\\cos(x) + ${b}\\sin(x) + C$`,
+                `$-${a}\\cos(x) - ${b}\\sin(x) + C$`
+            ];
+        } else if (subType === 1) {
+            // \int (a*e^x + b/x) dx
+            const a = randRange(2, 5);
+            const b = randRange(2, 5);
+            
+            text = `Calcula la integral indefinida:\n$$ \\int \\left(${a}e^x + \\frac{${b}}{x}\\right) dx $$`;
+            correctAnswer = `$${a}e^x + ${b}\\ln|x| + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${a}e^x - \\frac{${b}}{x^2} + C$`,
+                `$e^x + ${b}\\ln|x| + C$`,
+                `$${a}e^x - ${b}\\ln|x| + C$`
+            ];
+        } else {
+            // \int a*sec^2(x) dx
+            const a = randRange(2, 6);
+            
+            text = `Resuelve la integral indefinida:\n$$ \\int ${a}\\sec^2(x) \\, dx $$`;
+            correctAnswer = `$${a}\\tan(x) + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${a}\\sec(x) + C$`,
+                `$-${a}\\tan(x) + C$`,
+                `$\\frac{${a}}{3}\\tan^3(x) + C$`
+            ];
+        }
+    } else if (topic === 'integrales_sustitucion') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        if (subType === 0) {
+            // \int cos(a*x + b) dx
+            const a = randRange(2, 5);
+            const b = randRange(1, 5);
+            
+            text = `Resuelve la integral mediante sustitución:\n$$ \\int \\cos(${a}x + ${b}) \\, dx $$`;
+            correctAnswer = `$\\frac{1}{${a}}\\sin(${a}x + ${b}) + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$-\\frac{1}{${a}}\\sin(${a}x + ${b}) + C$`,
+                `$\\sin(${a}x + ${b}) + C$`,
+                `$${a}\\sin(${a}x + ${b}) + C$`
+            ];
+        } else if (subType === 1) {
+            // \int x * e^{a * x^2} dx
+            const a = randRange(2, 4);
+            const coeff = 2 * a;
+            
+            text = `Resuelve la integral indefinida:\n$$ \\int ${coeff}x e^{${a}x^2} \\, dx $$`;
+            correctAnswer = `$e^{${a}x^2} + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\frac{1}{${a}} e^{${a}x^2} + C$`,
+                `$${coeff} e^{${a}x^2} + C$`,
+                `$x^2 e^{${a}x^2} + C$`
+            ];
+        } else {
+            // \int x * (x^2 + a)^n dx
+            const a = randRange(1, 5);
+            const n = randRange(2, 4);
+            
+            text = `Resuelve la integral indefinida:\n$$ \\int 2x(x^2 + ${a})^{${n}} \\, dx $$`;
+            const exponent = n + 1;
+            correctAnswer = `$\\frac{(x^2 + ${a})^{${exponent}}}{${exponent}} + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\frac{(x^2 + ${a})^{${exponent - 1}}}{${exponent - 1}} + C$`,
+                `$(x^2 + ${a})^{${exponent}} + C$`,
+                `$\\frac{x^2(x^2 + ${a})^{${exponent}}}{${exponent}} + C$`
+            ];
+        }
+    } else { // integrales_partes
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            // \int x * e^{a*x} dx
+            const a = randRange(2, 4);
+            
+            text = `Usa integración por partes para resolver:\n$$ \\int x e^{${a}x} \\, dx $$`;
+            
+            const term1 = `\\frac{x}{${a}}e^{${a}x}`;
+            const term2 = `\\frac{1}{${a * a}}e^{${a}x}`;
+            correctAnswer = `$${term1} - ${term2} + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${term1} + ${term2} + C$`,
+                `$\\frac{x^2}{2}e^{${a}x} + C$`,
+                `$${a}x e^{${a}x} - e^{${a}x} + C$`
+            ];
+        } else {
+            // \int a * ln(x) dx
+            const a = randRange(2, 5);
+            
+            text = `Usa integración por partes para resolver:\n$$ \\int ${a}\\ln(x) \\, dx $$`;
+            correctAnswer = `$${a}x\\ln(x) - ${a}x + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$${a}\\ln(x) - ${a}x + C$`,
+                `$\\frac{${a}}{x} + C$`,
+                `$${a}x\\ln(x) + ${a}x + C$`
+            ];
+        }
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$x^2 + C$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Integrales Indefinidas'
+    };
+}
+
+// ==========================================================================
+// DERIVADAS PARCIALES GENERATOR
+// ==========================================================================
+function generateDerivadasParcialesQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_parc_' + level;
+    
+    if (topic === 'parciales_dos_primer') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 3, index);
+        const askVar = getShuffledIndexForTopic(shuffleKey + '_var', 2, index) === 0 ? 'x' : 'y';
+        
+        if (subType === 0) {
+            // Polynomial: f(x, y) = a*x^n*y^m + b*x^2 - c*y^3
+            const a = randRange(2, 5);
+            const n = randRange(2, 4);
+            const m = randRange(2, 4);
+            const b = randRange(2, 5);
+            const c = randRange(2, 5);
+            
+            text = `Dada la función:\n$$ f(x,y) = ${a}x^{${n}}y^{${m}} + ${b}x^2 - ${c}y^3 $$`;
+            
+            if (askVar === 'x') {
+                text += `\nCalcula la derivada parcial $\\frac{\\partial f}{\\partial x}$:`;
+                const term1Val = a * n;
+                const term1 = `${term1Val}x^{${n-1 > 1 ? n-1 : ''}}y^{${m}}`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial x} = ${term1} + ${2 * b}x$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial x} = ${a}x^{${n-1}}y^{${m}} + ${2 * b}x$`,
+                    `$\\frac{\\partial f}{\\partial x} = ${term1} + ${2 * b}x - ${3 * c}y^2$`,
+                    `$\\frac{\\partial f}{\\partial x} = ${term1}$`
+                ];
+            } else {
+                text += `\nCalcula la derivada parcial $\\frac{\\partial f}{\\partial y}$:`;
+                const term1Val = a * m;
+                const term1 = `${term1Val}x^{${n}}y^{${m-1 > 1 ? m-1 : ''}}`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial y} = ${term1} - ${3 * c}y^2$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial y} = ${term1} + ${2 * b}x$`,
+                    `$\\frac{\\partial f}{\\partial y} = ${a}x^{${n}}y^{${m-1}} - ${3 * c}y^2$`,
+                    `$\\frac{\\partial f}{\\partial y} = ${term1} - ${c}y^2$`
+                ];
+            }
+        } else if (subType === 1) {
+            // Exponential: f(x, y) = e^{a*x*y}
+            const a = randRange(2, 4);
+            
+            text = `Dada la función:\n$$ f(x,y) = e^{${a}xy} $$`;
+            if (askVar === 'x') {
+                text += `\nCalcula la derivada parcial $\\frac{\\partial f}{\\partial x}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial x} = ${a}y e^{${a}xy}$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial x} = ${a}x e^{${a}xy}$`,
+                    `$\\frac{\\partial f}{\\partial x} = e^{${a}xy}$`,
+                    `$\\frac{\\partial f}{\\partial x} = ${a} e^{${a}xy}$`
+                ];
+            } else {
+                text += `\nCalcula la derivada parcial $\\frac{\\partial f}{\\partial y}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial y} = ${a}x e^{${a}xy}$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial y} = ${a}y e^{${a}xy}$`,
+                    `$\\frac{\\partial f}{\\partial y} = e^{${a}xy}$`,
+                    `$\\frac{\\partial f}{\\partial y} = ${a} e^{${a}xy}$`
+                ];
+            }
+        } else {
+            // Trigonometric / Log: f(x, y) = sin(a*x) + y*ln(x)
+            const a = randRange(2, 5);
+            
+            text = `Dada la función:\n$$ f(x,y) = \\sin(${a}x) + y\\ln(x) $$`;
+            if (askVar === 'x') {
+                text += `\nCalcula la derivada parcial $\\frac{\\partial f}{\\partial x}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial x} = ${a}\\cos(${a}x) + \\frac{y}{x}$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial x} = \\cos(${a}x) + \\frac{y}{x}$`,
+                    `$\\frac{\\partial f}{\\partial x} = ${a}\\cos(${a}x) + \\ln(x)$`,
+                    `$\\frac{\\partial f}{\\partial x} = -${a}\\cos(${a}x) + \\frac{y}{x}$`
+                ];
+            } else {
+                text += `\nCalcula la derivada parcial $\\frac{\\partial f}{\\partial y}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial y} = \\ln(x)$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial y} = \\frac{y}{x}$`,
+                    `$\\frac{\\partial f}{\\partial y} = \\ln(x) + \\sin(${a}x)$`,
+                    `$\\frac{\\partial f}{\\partial y} = 1$`
+                ];
+            }
+        }
+    } else if (topic === 'parciales_dos_segundo') {
+        const askType = getShuffledIndexForTopic(shuffleKey + '_type', 3, index); // 0: f_xx, 1: f_yy, 2: f_xy
+        
+        const a = randRange(2, 4);
+        const n = randRange(3, 4);
+        const m = randRange(3, 4);
+        
+        text = `Dada la función:\n$$ f(x,y) = ${a}x^{${n}}y^{${m}} $$`;
+        
+        if (askType === 0) {
+            text += `\nCalcula la derivada parcial de segundo orden $f_{xx} = \\frac{\\partial^2 f}{\\partial x^2}$:`;
+            const val = a * n * (n - 1);
+            correctAnswer = `$f_{xx} = ${val}x^{${n-2 > 1 ? n-2 : ''}}y^{${m}}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f_{xx} = ${a * n}x^{${n-1}}y^{${m}}$`,
+                `$f_{xx} = ${a * n * m}x^{${n-1}}y^{${m-1}}$`,
+                `$f_{xx} = ${a * m * (m-1)}x^{${n}}y^{${m-2}}$`
+            ];
+        } else if (askType === 1) {
+            text += `\nCalcula la derivada parcial de segundo orden $f_{yy} = \\frac{\\partial^2 f}{\\partial y^2}$:`;
+            const val = a * m * (m - 1);
+            correctAnswer = `$f_{yy} = ${val}x^{${n}}y^{${m-2 > 1 ? m-2 : ''}}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f_{yy} = ${a * m}x^{${n}}y^{${m-1}}$`,
+                `$f_{yy} = ${a * n * m}x^{${n-1}}y^{${m-1}}$`,
+                `$f_{yy} = ${a * n * (n-1)}x^{${n-2}}y^{${m}}$`
+            ];
+        } else {
+            text += `\nCalcula la derivada parcial mixta $f_{xy} = \\frac{\\partial^2 f}{\\partial y \\partial x}$:`;
+            const val = a * n * m;
+            correctAnswer = `$f_{xy} = ${val}x^{${n-1 > 1 ? n-1 : ''}}y^{${m-1 > 1 ? m-1 : ''}}$`;
+            
+            choices = [
+                correctAnswer,
+                `$f_{xy} = ${a * n * (n-1)}x^{${n-2}}y^{${m}}$`,
+                `$f_{xy} = ${a * m * (m-1)}x^{${n}}y^{${m-2}}$`,
+                `$f_{xy} = ${a}x^{${n-1}}y^{${m-1}}$`
+            ];
+        }
+    } else if (topic === 'parciales_tres_primer') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        const askVar = getShuffledIndexForTopic(shuffleKey + '_var', 3, index); // 0: x, 1: y, 2: z
+        
+        if (subType === 0) {
+            // Polynomial: f(x, y, z) = a*x^n * y^m * z^q
+            const a = randRange(2, 4);
+            const n = randRange(2, 3);
+            const m = randRange(2, 3);
+            const q = randRange(2, 4);
+            
+            text = `Dada la función de tres variables:\n$$ f(x,y,z) = ${a}x^{${n}}y^{${m}}z^{${q}} $$`;
+            
+            if (askVar === 0) {
+                text += `\nCalcula $\\frac{\\partial f}{\\partial x}$:`;
+                const val = a * n;
+                const xTerm = n - 1 > 1 ? `x^${n-1}` : 'x';
+                correctAnswer = `$\\frac{\\partial f}{\\partial x} = ${val}${xTerm}y^{${m}}z^{${q}}$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial x} = ${a}${xTerm}y^{${m}}z^{${q}}$`,
+                    `$\\frac{\\partial f}{\\partial x} = ${a * m}x^{${n}}y^{${m-1}}z^{${q}}$`,
+                    `$\\frac{\\partial f}{\\partial x} = ${a * q}x^{${n}}y^{${m}}z^{${q-1}}$`
+                ];
+            } else if (askVar === 1) {
+                text += `\nCalcula $\\frac{\\partial f}{\\partial y}$:`;
+                const val = a * m;
+                const yTerm = m - 1 > 1 ? `y^${m-1}` : 'y';
+                correctAnswer = `$\\frac{\\partial f}{\\partial y} = ${val}x^{${n}}${yTerm}z^{${q}}$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial y} = ${a}x^{${n}}${yTerm}z^{${q}}$`,
+                    `$\\frac{\\partial f}{\\partial y} = ${a * n}x^{${n-1}}y^{${m}}z^{${q}}$`,
+                    `$\\frac{\\partial f}{\\partial y} = ${a * q}x^{${n}}y^{${m}}z^{${q-1}}$`
+                ];
+            } else {
+                text += `\nCalcula $\\frac{\\partial f}{\\partial z}$:`;
+                const val = a * q;
+                const zTerm = q - 1 > 1 ? `z^${q-1}` : 'z';
+                correctAnswer = `$\\frac{\\partial f}{\\partial z} = ${val}x^{${n}}y^{${m}}${zTerm}$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial z} = ${a}x^{${n}}y^{${m}}${zTerm}$`,
+                    `$\\frac{\\partial f}{\\partial z} = ${a * n}x^{${n-1}}y^{${m}}z^{${q}}$`,
+                    `$\\frac{\\partial f}{\\partial z} = ${a * m}x^{${n}}y^{${m-1}}z^{${q}}$`
+                ];
+            }
+        } else {
+            // Function: f(x, y, z) = x^2 * y + y^2 * z + z^2 * x
+            text = `Dada la función:\n$$ f(x,y,z) = x^2 y + y^2 z + z^2 x $$`;
+            
+            if (askVar === 0) {
+                text += `\nCalcula $\\frac{\\partial f}{\\partial x}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial x} = 2xy + z^2$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial x} = 2xy + y^2$`,
+                    `$\\frac{\\partial f}{\\partial x} = x^2 + z^2$`,
+                    `$\\frac{\\partial f}{\\partial x} = 2xy + 2yz + 2zx$`
+                ];
+            } else if (askVar === 1) {
+                text += `\nCalcula $\\frac{\\partial f}{\\partial y}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial y} = x^2 + 2yz$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial y} = x^2 + y^2$`,
+                    `$\\frac{\\partial f}{\\partial y} = 2xy + 2yz$`,
+                    `$\\frac{\\partial f}{\\partial y} = 2yz + z^2$`
+                ];
+            } else {
+                text += `\nCalcula $\\frac{\\partial f}{\\partial z}$:`;
+                correctAnswer = `$\\frac{\\partial f}{\\partial z} = y^2 + 2zx$`;
+                
+                choices = [
+                    correctAnswer,
+                    `$\\frac{\\partial f}{\\partial z} = z^2 + 2zx$`,
+                    `$\\frac{\\partial f}{\\partial z} = y^2 + z^2$`,
+                    `$\\frac{\\partial f}{\\partial z} = 2yz + 2zx$`
+                ];
+            }
+        }
+    } else { // parciales_gradiente
+        const evalAtPoint = getShuffledIndexForTopic(shuffleKey + '_eval', 2, index) === 0;
+        
+        if (evalAtPoint) {
+            // f(x,y) = x^2 + a*y^2 at point (xo, yo)
+            const a = randRange(2, 4);
+            const xo = randRange(1, 3);
+            const yo = randRange(1, 3);
+            
+            text = `Calcula el vector gradiente de $f(x,y) = x^2 + ${a}y^2$ en el punto $(${xo}, ${yo})$:`;
+            
+            const gx = 2 * xo;
+            const gy = 2 * a * yo;
+            
+            correctAnswer = `$\\nabla f(${xo}, ${yo}) = (${gx}, ${gy})$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\nabla f(${xo}, ${yo}) = (${xo}, ${yo})$`,
+                `$\\nabla f(${xo}, ${yo}) = (${gx}, ${a * yo})$`,
+                `$\\nabla f(${xo}, ${yo}) = (${2 * xo}, ${2 * yo})$`
+            ];
+        } else {
+            // Expression: f(x,y) = x^2*y^3
+            const a = randRange(2, 4);
+            text = `Calcula la expresión para el gradiente $\\nabla f(x,y)$ de la función:\n$$ f(x,y) = x^{${a}}y^3 $$`;
+            
+            const termX = `${a}x^{${a-1 > 1 ? a-1 : ''}}y^3`;
+            const termY = `3x^{${a}}y^2`;
+            
+            correctAnswer = `$\\nabla f(x,y) = (${termX})\\mathbf{i} + (${termY})\\mathbf{j}$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\nabla f(x,y) = (${termY})\\mathbf{i} + (${termX})\\mathbf{j}$`,
+                `$\\nabla f(x,y) = (x^{${a}})y^3\\mathbf{i} + 3y^2\\mathbf{j}$`,
+                `$\\nabla f(x,y) = (${a}x^{${a-1}}y^3)\\mathbf{i} + (x^{${a}}y^2)\\mathbf{j}$`
+            ];
+        }
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$(0, 0)$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Derivadas Parciales'
+    };
+}
+
+// ==========================================================================
+// INTEGRALES POR FRACCIONES PARCIALES GENERATOR
+// ==========================================================================
+function generateIntegralesFraccionesParcialesQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_frac_part_' + level;
+    
+    const formatBinomial = (v) => v > 0 ? `x - ${v}` : `x + ${Math.abs(v)}`;
+    const formatSign = (v) => v > 0 ? `+ ${v}` : `- ${Math.abs(v)}`;
+
+    if (topic === 'fracciones_parciales_simples') {
+        const a = randRange(1, 3);
+        let b = randRange(1, 4);
+        while (b === a) { b = randRange(1, 4); }
+        
+        const A = randRange(1, 3);
+        const B = randRange(1, 3);
+        
+        const numCoeffX = A + B;
+        const numConst = - (A * b + B * a);
+        
+        const denB = - (a + b);
+        const denC = a * b;
+        
+        const numText = `${numCoeffX}x ${numConst > 0 ? '+ ' + numConst : '- ' + Math.abs(numConst)}`;
+        const denText = `x^2 ${denB > 0 ? '+ ' + denB : '- ' + Math.abs(denB)}x ${denC > 0 ? '+ ' + denC : '- ' + Math.abs(denC)}`;
+        
+        text = `Resuelve la integral utilizando descomposición en fracciones parciales (factores lineales distintos):\n$$ \\int \\frac{${numText}}{${denText}} \\, dx $$`;
+        
+        correctAnswer = `$${A}\\ln|${formatBinomial(a)}| ${formatSign(B)}\\ln|${formatBinomial(b)}| + C$`;
+        
+        choices = [
+            correctAnswer,
+            `$${A}\\ln|${formatBinomial(a)}| - ${B}\\ln|${formatBinomial(b)}| + C$`,
+            `$\\ln|${formatBinomial(a)}| + \\ln|${formatBinomial(b)}| + C$`,
+            `$${numCoeffX}\\ln|${denText}| + C$`
+        ];
+    } else if (topic === 'fracciones_parciales_repetidos') {
+        const a = randRange(1, 3);
+        const A = randRange(1, 3);
+        const B = randRange(1, 3);
+        
+        const c = B - A * a;
+        const denB = - 2 * a;
+        const denC = a * a;
+        
+        const numText = `${A}x ${c > 0 ? '+ ' + c : c < 0 ? '- ' + Math.abs(c) : ''}`;
+        const denText = `(x ${a > 0 ? '- ' + a : '+ ' + Math.abs(a)})^2`;
+        
+        text = `Resuelve la integral con factores lineales repetidos:\n$$ \\int \\frac{${numText}}{${denText}} \\, dx $$`;
+        
+        correctAnswer = `$${A}\\ln|${formatBinomial(a)}| - \\frac{${B}}{${formatBinomial(a)}} + C$`;
+        
+        choices = [
+            correctAnswer,
+            `$${A}\\ln|${formatBinomial(a)}| + \\frac{${B}}{${formatBinomial(a)}} + C$`,
+            `$${A}\\ln|${formatBinomial(a)}| - \\frac{${B}}{(${formatBinomial(a)})^2} + C$`,
+            `$${A}\\ln|${formatBinomial(a)}| + C$`
+        ];
+    } else { 
+        const A = randRange(2, 4);
+        const B = randRange(2, 4);
+        
+        const numText = `${A}x^2 + ${B}x + ${A}`;
+        const denText = `x^3 + x`;
+        
+        text = `Resuelve la integral utilizando fracciones parciales con un factor cuadrático irreducible:\n$$ \\int \\frac{${numText}}{${denText}} \\, dx $$`;
+        
+        correctAnswer = `$${A}\\ln|x| + ${B}\\arctan(x) + C$`;
+        
+        choices = [
+            correctAnswer,
+            `$${A}\\ln|x| + \\frac{${B}}{2}\\ln(x^2 + 1) + C$`,
+            `$${A}\\ln|x| - ${B}\\arctan(x) + C$`,
+            `$\\ln|x^3 + x| + C$`
+        ];
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$\\ln|x| + C$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Fracciones Parciales'
+    };
+}
+
+// ==========================================================================
+// INTEGRALES POR SUSTITUCIÓN TRIGONOMÉTRICA GENERATOR
+// ==========================================================================
+function generateIntegralesSustitucionTrigonometricaQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_sust_trig_' + level;
+    
+    if (topic === 'sust_trig_seno') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const a = randRange(2, 6);
+            const aSq = a * a;
+            text = `Resuelve la integral utilizando la sustitución $x = ${a}\\sin(\\theta)$:\n$$ \\int \\frac{1}{\\sqrt{${aSq} - x^2}} \\, dx $$`;
+            correctAnswer = `$\\arcsin\\left(\\frac{x}{${a}}\\right) + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\frac{1}{${a}}\\arcsin\\left(\\frac{x}{${a}}\\right) + C$`,
+                `$\\arccos\\left(\\frac{x}{${a}}\\right) + C$`,
+                `$\\ln|x + \\sqrt{${aSq} - x^2}| + C$`
+            ];
+        } else {
+            const a = randRange(2, 4) * 2; 
+            const aSq = a * a;
+            const halfSq = aSq / 2;
+            text = `Resuelve utilizando la sustitución $x = ${a}\\sin(\\theta)$:\n$$ \\int \\sqrt{${aSq} - x^2} \\, dx $$`;
+            correctAnswer = `$\\frac{x}{2}\\sqrt{${aSq} - x^2} + ${halfSq}\\arcsin\\left(\\frac{x}{${a}}\\right) + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\frac{x}{2}\\sqrt{${aSq} - x^2} + ${aSq}\\arcsin\\left(\\frac{x}{${a}}\\right) + C$`,
+                `$x\\sqrt{${aSq} - x^2} + ${halfSq}\\arcsin\\left(\\frac{x}{${a}}\\right) + C$`,
+                `$\\frac{x}{2}\\sqrt{${aSq} - x^2} - ${halfSq}\\arccos\\left(\\frac{x}{${a}}\\right) + C$`
+            ];
+        }
+    } else if (topic === 'sust_trig_tangente') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const a = randRange(2, 5);
+            const aSq = a * a;
+            text = `Resuelve utilizando la sustitución $x = ${a}\\tan(\\theta)$:\n$$ \\int \\frac{1}{x^2 + ${aSq}} \\, dx $$`;
+            correctAnswer = `$\\frac{1}{${a}}\\arctan\\left(\\frac{x}{${a}}\\right) + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\arctan\\left(\\frac{x}{${a}}\\right) + C$`,
+                `$\\frac{1}{${aSq}}\\arctan\\left(\\frac{x}{${a}}\\right) + C$`,
+                `$\\frac{1}{${a}}\\ln|x^2 + ${aSq}| + C$`
+            ];
+        } else {
+            const a = randRange(1, 4);
+            const aSq = a * a;
+            text = `Resuelve utilizando la sustitución $x = ${a}\\tan(\\theta)$:\n$$ \\int \\frac{1}{\\sqrt{x^2 + ${aSq}}} \\, dx $$`;
+            correctAnswer = `$\\ln\\left|x + \\sqrt{x^2 + ${aSq}}\\right| + C$`;
+            
+            choices = [
+                correctAnswer,
+                `$\\frac{1}{${a}}\\ln\\left|x + \\sqrt{x^2 + ${aSq}}\\right| + C$`,
+                `$\\ln\\left|\\sqrt{x^2 + ${aSq}}\\right| + C$`,
+                `$\\frac{1}{${a}}\\arctan\\left(\\frac{x}{${a}}\\right) + C$`
+            ];
+        }
+    } else { 
+        const a = randRange(2, 5);
+        const aSq = a * a;
+        text = `Resuelve utilizando la sustitución $x = ${a}\\sec(\\theta)$:\n$$ \\int \\frac{1}{x\\sqrt{x^2 - ${aSq}}} \\, dx $$`;
+        correctAnswer = `$\\frac{1}{${a}}\\operatorname{arcsec}\\left(\\frac{x}{${a}}\\right) + C$`;
+        
+        choices = [
+            correctAnswer,
+            `$\\operatorname{arcsec}\\left(\\frac{x}{${a}}\\right) + C$`,
+            `$\\frac{1}{${a}}\\arcsin\\left(\\frac{x}{${a}}\\right) + C$`,
+            `$\\frac{1}{${a}}\\ln\\left|x + \\sqrt{x^2 - ${aSq}}\\right| + C$`
+        ];
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$\\arctan(x) + C$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Sustitución Trigonométrica'
+    };
+}
+
+// ==========================================================================
+// RECTA TANGENTE GENERATOR
+// ==========================================================================
+function generateRectaTangenteQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_recta_tan_' + level;
+    
+    if (topic === 'recta_tangente_algebraica') {
+        const a = randRange(1, 2) * (Math.random() < 0.5 ? 1 : -1);
+        const b = randRange(-3, 3);
+        const c = randRange(-4, 4);
+        const x0 = randRange(-1, 2);
+        
+        const fnText = `${a === 1 ? '' : a === -1 ? '-' : a}x^2 ${b > 0 ? '+ ' + b : b < 0 ? '- ' + Math.abs(b) : ''}x ${c > 0 ? '+ ' + c : c < 0 ? '- ' + Math.abs(c) : ''}`;
+        text = `Encuentra la ecuación de la recta tangente a la curva de la función:\n$$ f(x) = ${fnText} $$\nen el valor de abscisa $x = ${x0}$.`;
+        
+        const y0 = a * x0 * x0 + b * x0 + c;
+        const m = 2 * a * x0 + b;
+        
+        const intercept = y0 - m * x0;
+        
+        const formatLine = (slope, inter) => {
+            let res = 'y = ';
+            if (slope === 0) {
+                res += inter;
+            } else {
+                res += `${slope === 1 ? '' : slope === -1 ? '-' : slope}x`;
+                if (inter !== 0) {
+                    res += ` ${inter > 0 ? '+ ' + inter : '- ' + Math.abs(inter)}`;
+                }
+            }
+            return res;
+        };
+        
+        correctAnswer = `$${formatLine(m, intercept)}$`;
+        
+        choices = [
+            correctAnswer,
+            `$${formatLine(m + 1, intercept - 2)}$`,
+            `$${formatLine(-m, y0 + m * x0)}$`,
+            `$y = ${m}x$`
+        ];
+    } else if (topic === 'recta_tangente_trig_exp') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const a = randRange(2, 4);
+            const b = randRange(2, 3);
+            text = `Encuentra la ecuación de la recta tangente a la curva:\n$$ f(x) = ${a}e^{${b}x} $$\nen el punto donde $x = 0$.`;
+            
+            const y0 = a;
+            const m = a * b;
+            const intercept = y0;
+            
+            correctAnswer = `$y = ${m}x + ${intercept}$`;
+            
+            choices = [
+                correctAnswer,
+                `$y = ${b}x + ${a}$`,
+                `$y = ${m}x$`,
+                `$y = ${m}x - ${intercept}$`
+            ];
+        } else {
+            const a = randRange(2, 5);
+            text = `Encuentra la ecuación de la recta tangente a la curva:\n$$ f(x) = ${a}\\sin(x) $$\nen el punto donde $x = 0$.`;
+            
+            correctAnswer = `$y = ${a}x$`;
+            
+            choices = [
+                correctAnswer,
+                `$y = -${a}x$`,
+                `$y = ${a}x + ${a}$`,
+                `$y = x$`
+            ];
+        }
+    } else { 
+        const x0 = randRange(1, 2) * 2; 
+        const a = x0 * x0; 
+        const y0 = a / x0;
+        
+        text = `Determina la ecuación de la recta tangente a la curva de la función:\n$$ f(x) = \\frac{${a}}{x} $$\nen el punto dado $(${x0}, ${y0})$.`;
+        
+        const m = -1;
+        const intercept = y0 - m * x0; 
+        
+        correctAnswer = `$y = -x + ${intercept}$`;
+        
+        choices = [
+            correctAnswer,
+            `$y = x + ${intercept - 2 * x0}$`,
+            `$y = -x$`,
+            `$y = -\\frac{1}{${x0}}x + ${y0 + 1}$`
+        ];
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$y = x$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Recta Tangente'
+    };
+}
+
+// ==========================================================================
+// OPTIMIZACIÓN PRIMERA DERIVADA GENERATOR
+// ==========================================================================
+function generateOptimizacionPrimeraDerivadaQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    
+    const crit = "Criterio de la Primera Derivada:\n1. Hallar los puntos críticos donde f'(c) = 0 o no existe.\n2. Evaluar el signo de f'(x) a la izquierda y derecha de c:\n- Si cambia de (+) a (-), es un MÁXIMO.\n- Si cambia de (-) a (+), es un MÍNIMO.";
+    
+    if (topic === 'opt_1d_numeros') {
+        const sum = randRange(3, 10) * 4; 
+        text = `Encuentra dos números reales positivos cuya suma sea exactamente $${sum}$ y cuyo producto sea el máximo posible. ¿Cuáles son los números?`;
+        
+        const sol = sum / 2;
+        correctAnswer = `$x = ${sol},\\, y = ${sol}$`;
+        
+        choices = [
+            correctAnswer,
+            `$x = ${sol - 2},\\, y = ${sol + 2}$`,
+            `$x = ${sol - 4},\\, y = ${sol + 4}$`,
+            `$x = ${sol / 2},\\, y = ${1.5 * sol}$`
+        ];
+    } else if (topic === 'opt_1d_areas') {
+        const fence = randRange(5, 12) * 80; 
+        text = `Un granjero desea cercar un terreno rectangular adyacente a un río recto (no se requiere cerca a lo largo del río). Dispone de $${fence}\\text{ metros}$ de cerca. Determina las dimensiones del terreno que maximizan su área.`;
+        
+        const width = fence / 4;
+        const length = fence / 2;
+        correctAnswer = `$x = ${width}\\text{ m (ancho)},\\, y = ${length}\\text{ m (largo)}$`;
+        
+        choices = [
+            correctAnswer,
+            `$x = ${width - 10}\\text{ m},\\, y = ${length + 20}\\text{ m}$`,
+            `$x = ${fence / 3}\\text{ m},\\, y = ${fence / 3}\\text{ m}$`,
+            `$x = ${width / 2}\\text{ m},\\, y = ${fence - width}\\text{ m}$`
+        ];
+    } else { 
+        const side = randRange(2, 6) * 6; 
+        text = `Se desea construir una caja abierta a partir de una hoja de cartón cuadrada de $${side}\\text{ cm}$ de lado, cortando un cuadrado de lado $x$ en cada esquina y doblando las pestañas hacia arriba. Determina el valor de $x$ que maximiza el volumen total de la caja.`;
+        
+        const sol = side / 6;
+        correctAnswer = `$x = ${sol}\\text{ cm}$`;
+        
+        choices = [
+            correctAnswer,
+            `$x = ${sol + 1}\\text{ cm}$`,
+            `$x = ${sol - 1}\\text{ cm}$`,
+            `$x = ${side / 4}\\text{ cm}$`
+        ];
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$x = 2$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Optimización (1ª Derivada)',
+        criterion: crit
+    };
+}
+
+// ==========================================================================
+// OPTIMIZACIÓN SEGUNDA DERIVADA GENERATOR
+// ==========================================================================
+function generateOptimizacionSegundaDerivadaQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    
+    const crit = "Criterio de la Segunda Derivada:\n1. Hallar los puntos críticos resolviendo f'(c) = 0.\n2. Evaluar f''(c):\n- Si f''(c) < 0, es un MÁXIMO relativo.\n- Si f''(c) > 0, es un MÍNIMO relativo.";
+    
+    if (topic === 'opt_2d_costos') {
+        const b = randRange(2, 6) * 50; 
+        const c = randRange(2, 5) * 1000;
+        text = `La función de beneficio mensual de una empresa al vender $x$ artículos está dada por:\n$$ B(x) = -x^2 + ${b}x - ${c} $$\nDetermina la cantidad $x$ de artículos que maximiza el beneficio usando el criterio de la segunda derivada.`;
+        
+        const sol = b / 2;
+        correctAnswer = `$x = ${sol}$`;
+        
+        choices = [
+            correctAnswer,
+            `$x = ${sol - 10}$`,
+            `$x = ${sol + 10}$`,
+            `$x = ${b}$`
+        ];
+    } else if (topic === 'opt_2d_geometria') {
+        const side = randRange(4, 10);
+        const areaSq = side * side; 
+        text = `De todos los rectángulos con un área de $${areaSq}\\text{ m}^2$, encuentra las dimensiones de aquel que minimiza su perímetro utilizando el criterio de la segunda derivada.`;
+        
+        correctAnswer = `$x = ${side}\\text{ m},\\, y = ${side}\\text{ m}$`;
+        
+        choices = [
+            correctAnswer,
+            `$x = ${side - 2}\\text{ m},\\, y = ${side + 2}\\text{ m}$`,
+            `$x = ${side / 2}\\text{ m},\\, y = ${side * 2}\\text{ m}$`,
+            `$x = 2\\text{ m},\\, y = ${areaSq / 2}\\text{ m}$`
+        ];
+    } else { 
+        const xo = randRange(1, 3) * 5; 
+        text = `Halla el punto sobre la recta $y = 2x$ que se encuentra a la distancia mínima del punto $(${xo}, 0)$ utilizando el criterio de la segunda derivada para confirmar el mínimo.`;
+        
+        const xSol = xo / 5;
+        const ySol = 2 * xSol;
+        correctAnswer = `$(${xSol}, ${ySol})$`;
+        
+        choices = [
+            correctAnswer,
+            `$(${xSol + 1}, ${2 * (xSol + 1)})$`,
+            `$(${xSol - 1}, ${2 * (xSol - 1)})$`,
+            `$(${xo}, 0)$`
+        ];
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$(0, 0)$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Optimización (2ª Derivada)',
+        criterion: crit
+    };
+}
+
+// ==========================================================================
+// OPTIMIZACIÓN FUNCIÓN CUADRÁTICA GENERATOR
+// ==========================================================================
+function generateOptimizacionCuadraticaQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_opt_cuad_' + level;
+    
+    const crit = "Optimización con Función Cuadrática:\nPara f(x) = ax^2 + bx + c:\n- Si a > 0, tiene un MÍNIMO en el vértice.\n- Si a < 0, tiene un MÁXIMO en el vértice.\n- El vértice ocurre en:\n$$ x = -\\frac{b}{2a} $$\n- El valor óptimo es f(-b/(2a)).";
+
+    if (topic === 'opt_cuad_maximos') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const b = randRange(3, 6) * 2; 
+            const c = randRange(1, 4) * 5;  
+            text = `Un proyectil es lanzado verticalmente hacia arriba desde una plataforma. Su altura en metros en función del tiempo $t$ (en segundos) se modela mediante la función cuadrática:\n$$ h(t) = -t^2 + ${b}t + ${c} $$\nDetermina en qué tiempo $t$ alcanza su altura máxima y el valor de dicha altura.`;
+            
+            const tSol = b / 2;
+            const hSol = - (tSol * tSol) + b * tSol + c;
+            correctAnswer = `$t = ${tSol}\\text{ s},\\, h = ${hSol}\\text{ m}$`;
+            
+            choices = [
+                correctAnswer,
+                `$t = ${tSol + 1}\\text{ s},\\, h = ${hSol - 2}\\text{ m}$`,
+                `$t = ${tSol - 1}\\text{ s},\\, h = ${hSol - 4}\\text{ m}$`,
+                `$t = ${b}\\text{ s},\\, h = ${c}\\text{ m}$`
+            ];
+        } else {
+            const b = randRange(10, 30) * 4; 
+            text = `El ingreso mensual $I(x)$ en dólares de una tienda de electrónica al vender $x$ unidades de un artículo está dado por la función cuadrática:\n$$ I(x) = -2x^2 + ${b}x $$\n¿Cuántas unidades $x$ deben venderse para obtener el ingreso máximo y a cuánto asciende dicho ingreso?`;
+            
+            const xSol = b / 4;
+            const iSol = - 2 * (xSol * xSol) + b * xSol;
+            correctAnswer = `$x = ${xSol}\\text{ unidades},\\, I = ${iSol}\\text{ USD}$`;
+            
+            choices = [
+                correctAnswer,
+                `$x = ${xSol - 5}\\text{ unidades},\\, I = ${iSol - 50}\\text{ USD}$`,
+                `$x = ${xSol + 5}\\text{ unidades},\\, I = ${iSol - 50}\\text{ USD}$`,
+                `$x = ${b/2}\\text{ unidades},\\, I = ${iSol / 2}\\text{ USD}$`
+            ];
+        }
+    } else if (topic === 'opt_cuad_minimos') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const b = randRange(6, 15) * 2; 
+            const c = randRange(5, 15) * 15;
+            text = `El costo de operación de una maquinaria industrial está dado por la función cuadrática:\n$$ C(x) = x^2 - ${b}x + ${c} $$\ndonde $x$ es la cantidad de horas de uso diario. ¿Cuántas horas $x$ minimizan el costo de operación y cuál es el costo mínimo?`;
+            
+            const xSol = b / 2;
+            const cSol = (xSol * xSol) - b * xSol + c;
+            correctAnswer = `$x = ${xSol}\\text{ horas},\\, C = ${cSol}\\text{ USD}$`;
+            
+            choices = [
+                correctAnswer,
+                `$x = ${xSol + 2}\\text{ horas},\\, C = ${cSol + 4}\\text{ USD}$`,
+                `$x = ${xSol - 2}\\text{ horas},\\, C = ${cSol + 4}\\text{ USD}$`,
+                `$x = ${b}\\text{ horas},\\, C = ${c}\\text{ USD}$`
+            ];
+        } else {
+            const S = randRange(5, 12) * 2; 
+            text = `Encuentra dos números reales cuya suma sea $${S}$ de tal manera que la suma de sus cuadrados sea la mínima posible. ¿Cuál es el valor mínimo de la suma de sus cuadrados?`;
+            
+            const sol = S / 2;
+            const sumSq = 2 * (sol * sol);
+            correctAnswer = `$x = ${sol},\\, y = ${sol}\\text{ (Suma de cuadrados = ${sumSq})}$`;
+            
+            choices = [
+                correctAnswer,
+                `$x = ${sol - 2},\\, y = ${sol + 2}\\text{ (Suma de cuadrados = ${sumSq + 8})}$`,
+                `$x = ${sol - 4},\\, y = ${sol + 4}\\text{ (Suma de cuadrados = ${sumSq + 32})}$`,
+                `$x = ${S},\\, y = 0\\text{ (Suma de cuadrados = ${S*S})$`
+            ];
+        }
+    } else { 
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const a = randRange(2, 4);
+            const b = randRange(2, 4) * 2 * a; 
+            const c = randRange(5, 15);
+            text = `Dada la función cuadrática:\n$$ f(x) = ${a}x^2 - ${b}x + ${c} $$\nDetermina si la función posee un máximo o un mínimo, en qué valor de $x$ ocurre y el valor óptimo.`;
+            
+            const xSol = b / (2 * a);
+            const fSol = a * (xSol * xSol) - b * xSol + c;
+            correctAnswer = `Tiene un Mínimo de $${fSol}$ en $x = ${xSol}$`;
+            
+            choices = [
+                correctAnswer,
+                `Tiene un Máximo de $${fSol}$ en $x = ${xSol}$`,
+                `Tiene un Mínimo de $${fSol + 2}$ en $x = ${xSol + 1}$`,
+                `Tiene un Máximo de $${fSol + 2}$ en $x = ${xSol - 1}$`
+            ];
+        } else {
+            const a = randRange(2, 4);
+            const b = randRange(2, 4) * 2 * a; 
+            const c = randRange(5, 15);
+            text = `Dada la función cuadrática:\n$$ f(x) = -${a}x^2 + ${b}x + ${c} $$\nDetermina si la función posee un máximo o un mínimo, en qué valor de $x$ ocurre y el valor óptimo.`;
+            
+            const xSol = b / (2 * a);
+            const fSol = - a * (xSol * xSol) + b * xSol + c;
+            correctAnswer = `Tiene un Máximo de $${fSol}$ en $x = ${xSol}$`;
+            
+            choices = [
+                correctAnswer,
+                `Tiene un Mínimo de $${fSol}$ en $x = ${xSol}$`,
+                `Tiene un Máximo de $${fSol - 4}$ en $x = ${xSol + 1}$`,
+                `Tiene un Mínimo de $${fSol - 4}$ en $x = ${xSol - 1}$`
+            ];
+        }
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`Tiene un Mínimo de $0$ en $x = 0$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Optimización Cuadrática',
+        criterion: crit
+    };
+}
+
+// ==========================================================================
+// IDENTIDADES TRIGONOMÉTRICAS GENERATOR
+// ==========================================================================
+function generateIdentidadesTrigonometricasQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_trig_ident_' + level;
+    
+    if (topic === 'ident_pitagoricas') {
+        const idx = getShuffledIndexForTopic(shuffleKey + '_pit', 6, index);
+        if (idx === 0) {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\sin^2(x) + \\cos^2(x) $$`;
+            correctAnswer = `$1$`;
+            choices = [`$1$`, `$0$`, `$\\tan^2(x)$`, `$\\sec^2(x)$`];
+        } else if (idx === 1) {
+            text = `Simplifica la expresión trigonométrica:\n$$ 1 - \\sin^2(x) $$`;
+            correctAnswer = `$\\cos^2(x)$`;
+            choices = [`$\\cos^2(x)$`, `$\\sin^2(x)$`, `$1$`, `$-\\cos^2(x)$`];
+        } else if (idx === 2) {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\sec^2(x) - \\tan^2(x) $$`;
+            correctAnswer = `$1$`;
+            choices = [`$1$`, `$0$`, `$\\cos^2(x)$`, `$\\csc^2(x)$`];
+        } else if (idx === 3) {
+            text = `Simplifica la expresión trigonométrica:\n$$ 1 + \\tan^2(x) $$`;
+            correctAnswer = `$\\sec^2(x)$`;
+            choices = [`$\\sec^2(x)$`, `$\\csc^2(x)$`, `$\\cos^2(x)$`, `$\\cot^2(x)$`];
+        } else if (idx === 4) {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\csc^2(x) - \\cot^2(x) $$`;
+            correctAnswer = `$1$`;
+            choices = [`$1$`, `$\\sin^2(x)$`, `$0$`, `$\\cos^2(x)$`];
+        } else {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\sec^2(x) - 1 $$`;
+            correctAnswer = `$\\tan^2(x)$`;
+            choices = [`$\\tan^2(x)$`, `$\\cot^2(x)$`, `$\\cos^2(x)$`, `$1$`];
+        }
+    } else if (topic === 'ident_cocientes_reciprocidades') {
+        const idx = getShuffledIndexForTopic(shuffleKey + '_coc', 6, index);
+        if (idx === 0) {
+            text = `Simplifica utilizando identidades recíprocas o de cociente:\n$$ \\sin(x) \\sec(x) $$`;
+            correctAnswer = `$\\tan(x)$`;
+            choices = [`$\\tan(x)$`, `$\\cot(x)$`, `$\\cos(x)$`, `$1$`];
+        } else if (idx === 1) {
+            text = `Simplifica utilizando identidades recíprocas o de cociente:\n$$ \\cos(x) \\csc(x) $$`;
+            correctAnswer = `$\\cot(x)$`;
+            choices = [`$\\cot(x)$`, `$\\tan(x)$`, `$\\sin(x)$`, `$1$`];
+        } else if (idx === 2) {
+            text = `Simplifica la siguiente expresión:\n$$ \\tan(x) \\cos(x) $$`;
+            correctAnswer = `$\\sin(x)$`;
+            choices = [`$\\sin(x)$`, `$\\cos(x)$`, `$\\sec(x)$`, `$\\csc(x)$`];
+        } else if (idx === 3) {
+            text = `Simplifica la siguiente expresión:\n$$ \\cot(x) \\sin(x) $$`;
+            correctAnswer = `$\\cos(x)$`;
+            choices = [`$\\cos(x)$`, `$\\sin(x)$`, `$\\csc(x)$`, `$\\tan(x)$`];
+        } else if (idx === 4) {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\frac{\\tan(x)}{\\sin(x)} $$`;
+            correctAnswer = `$\\sec(x)$`;
+            choices = [`$\\sec(x)$`, `$\\csc(x)$`, `$\\cos(x)$`, `$\\cot(x)$`];
+        } else {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\frac{\\cot(x)}{\\cos(x)} $$`;
+            correctAnswer = `$\\csc(x)$`;
+            choices = [`$\\csc(x)$`, `$\\sec(x)$`, `$\\sin(x)$`, `$\\tan(x)$`];
+        }
+    } else { 
+        const idx = getShuffledIndexForTopic(shuffleKey + '_sum', 5, index);
+        if (idx === 0) {
+            text = `Simplifica utilizando fórmulas de ángulo doble:\n$$ 2\\sin(x)\\cos(x) $$`;
+            correctAnswer = `$\\sin(2x)$`;
+            choices = [`$\\sin(2x)$`, `$\\cos(2x)$`, `$2\\sin(x)$`, `$\\tan(2x)$`];
+        } else if (idx === 1) {
+            text = `Simplifica utilizando fórmulas de ángulo doble:\n$$ \\cos^2(x) - \\sin^2(x) $$`;
+            correctAnswer = `$\\cos(2x)$`;
+            choices = [`$\\cos(2x)$`, `$\\sin(2x)$`, `$1$`, `$2\\cos(x)$`];
+        } else if (idx === 2) {
+            text = `Simplifica la expresión trigonométrica:\n$$ \\frac{\\sin(2x)}{2\\cos(x)} $$`;
+            correctAnswer = `$\\sin(x)$`;
+            choices = [`$\\sin(x)$`, `$\\cos(x)$`, `$\\tan(x)$`, `$\\sin(2x)$`];
+        } else if (idx === 3) {
+            text = `Simplifica la siguiente expresión:\n$$ 1 - 2\\sin^2(x) $$`;
+            correctAnswer = `$\\cos(2x)$`;
+            choices = [`$\\cos(2x)$`, `$\\sin(2x)$`, `$\\cos^2(x)$`, `$\\sin^2(x)$`];
+        } else {
+            text = `Simplifica la siguiente expresión:\n$$ 2\\cos^2(x) - 1 $$`;
+            correctAnswer = `$\\cos(2x)$`;
+            choices = [`$\\cos(2x)$`, `$\\sin(2x)$`, `$1$`, `$\\sec(2x)$`];
+        }
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$\\sin(x)$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Identidades Trigonométricas'
+    };
+}
+
+// ==========================================================================
+// FACTORIZACIÓN DE EXPRESIONES CUADRÁTICAS GENERATOR
+// ==========================================================================
+function generateFactorizacionCuadraticaQuestion(topic, level, options, index, total) {
+    let text = '';
+    let correctAnswer = '';
+    let choices = [];
+    const shuffleKey = topic + '_fact_' + level;
+    
+    const critPoShenLoh = "Método de Po-Shen Loh (para x^2 + Bx + C):\n1. Las raíces r1, r2 sumadas son -B y su producto es C.\n2. El promedio es -B/2. Las raíces son -B/2 ± u.\n3. Se cumple: (-B/2 - u)(-B/2 + u) = C => (B^2)/4 - u^2 = C.\n4. Se halla u y luego las raíces r1, r2.\n5. Expresión factorizada: (x - r1)(x - r2).";
+    const critGral = "Técnicas de Factorización Cuadrática:\n- Diferencia de Cuadrados:\n  x^2 - a^2 = (x - a)(x + a)\n- Trinomio Cuadrado Perfecto (TCP):\n  x^2 ± 2ax + a^2 = (x ± a)^2\n- Trinomios ax^2 + bx + c:\n  Búsqueda de dos binomios (px + q)(sx + t).";
+
+    const formatFactor = (r) => r > 0 ? `x - ${r}` : `x + ${Math.abs(r)}`;
+    const formatLinear = (coeff, k) => {
+        let term = coeff === 1 ? 'x' : `${coeff}x`;
+        if (k > 0) term += ` + ${k}`;
+        else if (k < 0) term += ` - ${Math.abs(k)}`;
+        return term;
+    };
+
+    if (topic === 'fact_poshenloh') {
+        let r1 = randRange(-6, 6) || 2;
+        let r2 = randRange(-6, 6) || 4;
+        while (r1 === r2) { r2 = randRange(-6, 6) || 4; }
+        
+        const B = -(r1 + r2);
+        const C = r1 * r2;
+        
+        const BPart = B === 1 ? '+ x' : B === -1 ? '- x' : B > 0 ? '+ ' + B + 'x' : B < 0 ? '- ' + Math.abs(B) + 'x' : '';
+        const CPart = C > 0 ? '+ ' + C : C < 0 ? '- ' + Math.abs(C) : '';
+        
+        text = `Factoriza el siguiente trinomio de segundo grado utilizando el método de Po-Shen Loh:\n$$ x^2 ${BPart} ${CPart} $$`;
+        
+        correctAnswer = `$(${formatFactor(r1)})(${formatFactor(r2)})$`;
+        
+        choices = [
+            correctAnswer,
+            `$(${formatFactor(-r1)})(${formatFactor(-r2)})$`,
+            `$(${formatFactor(r1)})(${formatFactor(-r2)})$`,
+            `$(${formatFactor(-r1)})(${formatFactor(r2)})$`
+        ];
+    } else if (topic === 'fact_diferencia_tcp') {
+        const subType = getShuffledIndexForTopic(shuffleKey + '_sub', 2, index);
+        if (subType === 0) {
+            const a = randRange(2, 10);
+            const aSq = a * a;
+            text = `Factoriza la siguiente diferencia de cuadrados:\n$$ x^2 - ${aSq} $$`;
+            correctAnswer = `$(x - ${a})(x + ${a})$`;
+            
+            choices = [
+                correctAnswer,
+                `$(x - ${a})^2$`,
+                `$(x + ${a})^2$`,
+                `$x(x - ${aSq})$`
+            ];
+        } else {
+            const a = randRange(2, 8) * (Math.random() < 0.5 ? 1 : -1);
+            const mid = 2 * a;
+            const last = a * a;
+            
+            text = `Factoriza el siguiente trinomio cuadrado perfecto:\n$$ x^2 ${mid > 0 ? '+ ' + mid : '- ' + Math.abs(mid)}x + ${last} $$`;
+            
+            correctAnswer = `$(${formatFactor(-a)})^2$`;
+            
+            choices = [
+                correctAnswer,
+                `$(${formatFactor(a)})^2$`,
+                `$(${formatFactor(-a)})(${formatFactor(a)})$`,
+                `$x(x ${mid > 0 ? '+ ' + mid : '- ' + Math.abs(mid)}) + ${last}$`
+            ];
+        }
+    } else { 
+        let p = randRange(2, 3);
+        let s = randRange(1, 2);
+        if (p * s === 1) { p = 2; }
+        
+        const q = randRange(-3, 3) || 1;
+        const t = randRange(-3, 3) || 2;
+        
+        const a = p * s;
+        const b = p * t + q * s;
+        const c = q * t;
+        
+        const aPart = a === 1 ? '' : a === -1 ? '-' : a;
+        const bPart = b === 1 ? '+ x' : b === -1 ? '- x' : b > 0 ? '+ ' + b + 'x' : b < 0 ? '- ' + Math.abs(b) + 'x' : '';
+        const cPart = c > 0 ? '+ ' + c : c < 0 ? '- ' + Math.abs(c) : '';
+        
+        text = `Factoriza la siguiente expresión cuadrática con coeficiente principal $a \\neq 1$:\n$$ ${aPart}x^2 ${bPart} ${cPart} $$`;
+        
+        correctAnswer = `$(${formatLinear(p, q)})(${formatLinear(s, t)})$`;
+        
+        choices = [
+            correctAnswer,
+            `$(${formatLinear(p, -q)})(${formatLinear(s, -t)})$`,
+            `$(${formatLinear(p, t)})(${formatLinear(s, q)})$`,
+            `$(${formatLinear(p, -t)})(${formatLinear(s, -q)})$`
+        ];
+    }
+
+    const uniqueChoices = [...new Set(choices)];
+    while (uniqueChoices.length < 4) {
+        uniqueChoices.push(`$(x - 1)(x - 2)$`);
+    }
+
+    return {
+        text: text,
+        correctAnswer: correctAnswer,
+        inputType: 'multiple-choice',
+        choices: shuffleArray(uniqueChoices),
+        topicLabel: 'Factorización Cuadrática',
+        criterion: topic === 'fact_poshenloh' ? critPoShenLoh : critGral,
+        criterionHeader: topic === 'fact_poshenloh' ? "Método de Po-Shen Loh" : "Guía de Factorización"
+    };
+}
+

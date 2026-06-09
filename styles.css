@@ -31,6 +31,17 @@
     --c-conversion: #06b6d4;
     --c-despeje: #f43f5e;
     --c-ecuaciones: #14b8a6;
+    --c-derivadas: #6366f1;
+    --c-integrales: #ea580c;
+    --c-parciales: #a855f7;
+    --c-frac-parciales: #ec4899;
+    --c-sust-trig: #06b6d4;
+    --c-recta-tangente: #eab308;
+    --c-opt-1d: #10b981;
+    --c-opt-2d: #84cc16;
+    --c-opt-cuadratica: #0ea5e9;
+    --c-trig-identidades: #d946ef;
+    --c-factorizacion: #e11d48;
 
     /* Common Sizing */
     --radius-sm: 8px;
@@ -450,6 +461,17 @@ h2 {
 .category-card[data-category="conversion_unidades"]::before { background: var(--c-conversion); }
 .category-card[data-category="despeje_variables"]::before { background: var(--c-despeje); }
 .category-card[data-category="ecuaciones"]::before { background: var(--c-ecuaciones); }
+.category-card[data-category="calculo_derivadas"]::before { background: var(--c-derivadas); }
+.category-card[data-category="integrales_indefinidas"]::before { background: var(--c-integrales); }
+.category-card[data-category="derivadas_parciales"]::before { background: var(--c-parciales); }
+.category-card[data-category="integrales_fracciones_parciales"]::before { background: var(--c-frac-parciales); }
+.category-card[data-category="integrales_sustitucion_trigonometrica"]::before { background: var(--c-sust-trig); }
+.category-card[data-category="recta_tangente"]::before { background: var(--c-recta-tangente); }
+.category-card[data-category="optimizacion_primera_derivada"]::before { background: var(--c-opt-1d); }
+.category-card[data-category="optimizacion_segunda_derivada"]::before { background: var(--c-opt-2d); }
+.category-card[data-category="optimizacion_cuadratica"]::before { background: var(--c-opt-cuadratica); }
+.category-card[data-category="identidades_trigonometricas"]::before { background: var(--c-trig-identidades); }
+.category-card[data-category="factorizacion_cuadratica"]::before { background: var(--c-factorizacion); }
 
 .card-icon {
     width: 56px;
@@ -471,6 +493,17 @@ h2 {
 .c-conversion { background: linear-gradient(135deg, var(--c-conversion), #0891b2); }
 .c-despeje { background: linear-gradient(135deg, var(--c-despeje), #fb7185); }
 .c-ecuaciones { background: linear-gradient(135deg, var(--c-ecuaciones), #2dd4bf); }
+.c-derivadas { background: linear-gradient(135deg, var(--c-derivadas), #818cf8); }
+.c-integrales { background: linear-gradient(135deg, var(--c-integrales), #f97316); }
+.c-parciales { background: linear-gradient(135deg, var(--c-parciales), #c084fc); }
+.c-frac-parciales { background: linear-gradient(135deg, var(--c-frac-parciales), #f472b6); }
+.c-sust-trig { background: linear-gradient(135deg, var(--c-sust-trig), #22d3ee); }
+.c-recta-tangente { background: linear-gradient(135deg, var(--c-recta-tangente), #facc15); }
+.c-opt-1d { background: linear-gradient(135deg, var(--c-opt-1d), #34d399); }
+.c-opt-2d { background: linear-gradient(135deg, var(--c-opt-2d), #a3e635); }
+.c-opt-cuadratica { background: linear-gradient(135deg, var(--c-opt-cuadratica), #38bdf8); }
+.c-trig-identidades { background: linear-gradient(135deg, var(--c-trig-identidades), #f472b6); }
+.c-factorizacion { background: linear-gradient(135deg, var(--c-factorizacion), #fb7185); }
 
 .category-card h3 {
     font-size: 20px;
@@ -1376,3 +1409,44 @@ body.dark-theme .quiz-visual-container {
         font-size: 30px;
     }
 }
+
+/* Split-layout for Optimization Criteria */
+.question-container-split {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    text-align: left;
+}
+.question-main-text {
+    flex: 2;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+.question-criterion-box {
+    flex: 1;
+    background: rgba(99, 102, 241, 0.08);
+    border-left: 4px solid var(--c-derivadas);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    align-self: center;
+    box-shadow: var(--shadow-sm);
+}
+@media (max-width: 768px) {
+    .question-container-split {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    .question-criterion-box {
+        align-self: stretch;
+        text-align: left;
+    }
+}
+
